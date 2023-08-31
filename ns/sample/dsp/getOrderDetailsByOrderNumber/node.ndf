@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.0</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">orderNumber</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">SalesOrder</value>
+          <value name="field_type">recref</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+          <value name="rec_closed">false</value>
+          <value name="rec_ref">sample.dsp.docTypes:docType_SalesOrder</value>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+  </record>
+  <value name="node_comment">====================================================================
+
+     *** EXAMPLE CODE -- NOT INTENDED FOR PRODUCTION USE  ***
+
+====================================================================
+
+This service polls a specific directory for orders that have been placed, formats
+the XML file into a webMethods Document list, and returns the data to the calling
+Dynamic Server Page (DSP).  The DSP page renders the data in a readable
+format for the user.
+
+To run this service:
+1.  Go to http://{server name}:port/WmSamples/Orders/Orders.dsp
+2.  Enter your username and password.  In order to execute the Orders.dsp file
+you must enter a user in the "Developer" group.
+3.  View output
+4.  Click on one of the OrderNumber values.  This will execute the
+/WmSamples/Orders/OrderDetails.dsp file passing in the orderNumber as input.
+5.  View the output of this service.
+
+This service is provided as an example of one way that you might
+accomplish this task. As a member of the WmSamples package, this
+service is subject to modification or removal, without notice,
+in future versions of the product.
+
+This service is not a member of the webMethods library and should
+not be used in a production solution.
+
+====================================================================
+
+</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="template_type">html</value>
+  <value name="check_internal_acls">no</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+</Values>

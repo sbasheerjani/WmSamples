@@ -1,0 +1,43 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>GOES: Global Order Entry System</title>
+</head>
+
+<body background="/WmSamples/goes/orange_background.gif" bgcolor="#2E4578" text="#FFFFFF" topmargin="0" leftmargin="0" link="#F26F18" vlink="#F26F18" alink="#F26F18">
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#000000"><img
+        src="/WmSamples/goes/spacer.gif" width="4" height="4"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#2E4578">&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#F26F18">
+          <p align="center"><a href="/WmSamples/goes/index.html"><img src="/WmSamples/goes/GOES.gif" border="0" width="311" height="51"></a></p>
+        </td>
+    </tr>
+    <tr>
+        <td align="right" bgcolor="#2E4578">
+          <img src="/WmSamples/goes/spacer.gif" width="4" height="22">
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#000000"><img src="/WmSamples/goes/spacer.gif" width="4" height="4"></td>
+    </tr>
+    <tr>
+        <td><img src="/WmSamples/goes/spacer.gif" width="20" height="20"></td>
+    </tr>
+</table>
+      <center>
+            <table border="0" bgcolor="#000000" cellspacing="4" cellpadding="0">
+        <tr>
+          <td width="100%"><center>

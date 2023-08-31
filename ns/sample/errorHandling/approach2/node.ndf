@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">unknown</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_usereditable">false</value>
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="field_name">succeed</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+          <array name="field_options" type="value" depth="1">
+            <value>true</value>
+            <value>false</value>
+          </array>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">status</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+  </record>
+  <value name="node_comment">====================================================================
+
+     *** EXAMPLE CODE -- NOT INTENDED FOR PRODUCTION USE  ***
+
+====================================================================
+
+This service is an example of how to ensure that you catch any error that is thrown
+in your processing and handle that error elegantly.  The method that this approach
+uses is very common among webMethods Professional Service consultants.  The
+three SEQUENCE statements are used to create a try/catch block.  The first SEQUENCE
+has a value set to exit on SUCCESS.  The second SEQUENCE is your try block and has a
+exit on value of FAILURE.  The third SEQUENCE is your catch block that exits on DONE.
+If there is an error encountered in the second SEQUENCE (the try), then it is exited
+and the processing falls into the third SEQUENCE (the catch) which will process.
+As the developer, you can handle the error any way that fits your architecture.  Our
+example rolls back the transaction and logs the error.  Yours may send an e-mail to
+an Administrator and log the error.  The services logic includes the following steps:
+
+1.   SEQUENCE that exits on SUCCESS (the parent sequence)
+1.1  SEQUENCE that exits on FAILURE.  This sequence acts as the try block in Java code.  If
+an error is thrown during processing any of the steps, it is exited immediately (like Java)
+and enters the other sequence step
+1.1.1  Calls sample.errorHandling.util:startTransaction to simulate the starting of a
+process.
+1.1.2  Calls sample.errorHandling.util:doSomethingThatCouldFail which would basically contain
+the developer's logic.  If an error is encountered here, the SEQUENCE 1.1 is exited
+and the SEQUENCE 1.2 is entered.
+1.1.3  Calls sample.errorHandling.util:commit if there were no errors and exits processing.
+The 1.2 SEQUENCE is never entered.
+1.2  SEQUENCE that exits on DONE.  This sequence acts as the catch block in Java.  If
+any errors are encountered in the above sequence, they are sent to this block of code.
+You can handle the error in any way you would like to as the developer.  The way done
+under this sequence is just an example and should not be used in production.
+1.2.1  Calls sample.errorHandling.util:rollback to roll back any changes that were made
+during the transaction.
+1.2.2  Calls pub.flow:getLastError to get the last error that was thrown.
+1.2.3  Calls pub.flow:debugLog to send it to the debug log.
+
+
+To run this service, you must hit F7 and begin stepping through it.  When prompted for
+the input variable, succeed, use the drop down box to choose true or false.
+
+This service is provided as an example of one way that you might
+accomplish this task. As a member of the WmSamples package, this
+service is subject to modification or removal, without notice,
+in future versions of the product.
+
+This service is not a member of the webMethods library and should
+not be used in a production solution.
+
+====================================================================</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="template_type">html</value>
+  <value name="check_internal_acls">no</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+</Values>

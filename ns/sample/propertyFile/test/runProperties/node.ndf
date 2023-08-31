@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">unknown</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">Properties</value>
+          <value name="field_type">recref</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+          <value name="rec_closed">false</value>
+          <value name="rec_ref">sample.propertyFile.docTypes:Properties</value>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+  </record>
+  <value name="node_comment">====================================================================
+
+     *** EXAMPLE CODE -- NOT INTENDED FOR PRODUCTION USE  ***
+
+====================================================================
+
+This service inputs nothing and returns a Document containing all
+of the properties that were in the file.  It has the same concept
+as a name/value pair.
+
+If you would like to extend this example and learn how to store
+things in memory, enable the last two services in the flow.  Once
+you have run the service with the last two steps enabled, the
+properties will be stored in memory using the name 'propertyStore'.
+See the documentation on the pub.storage services for more details.
+
+1. Copy the key (Ctrl-C)
+2. Go to the WmPublic -&gt; pub -&gt; storage folder and execute
+get inputing the key and using 'propertyStore' as the store name.
+
+As you see, there is quite a bit you can add on to this functionality.
+
+To run this service, press F7 to begin stepping through the
+code.
+
+This service is provided as an example of one way that you might
+accomplish this task. As a member of the WmSamples package, this
+service is subject to modification or removal, without notice,
+in future versions of the product.
+
+This service is not a member of the webMethods library and should
+not be used in a production solution.
+
+====================================================================
+</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="template_type">html</value>
+  <value name="check_internal_acls">no</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+</Values>

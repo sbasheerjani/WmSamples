@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">updateNodeTotals</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">VmFsdWVzIG5leHQgPSBpbi5nZXRWYWx1ZXMoIm5leHQiKTsNClN0cmluZyBuYW1lID0gbmV4dC5n
+ZXRTdHJpbmcoIm5hbWUiKTsNCg0KVmFsdWVzIHRvdGFscyA9IGluLmdldFZhbHVlcygidG90YWxz
+Iik7DQppZih0b3RhbHMgPT0gbnVsbCkNCiAgICB0b3RhbHMgPSBuZXcgVmFsdWVzKCk7DQoNClN0
+cmluZyBwcmV2Q291bnRTdHIgPSB0b3RhbHMuZ2V0U3RyaW5nKG5hbWUpOw0KaWYocHJldkNvdW50
+U3RyID09IG51bGwpDQp7DQogICAgdG90YWxzLnB1dChuYW1lLCAiMSIpOw0KICAgIG91dC5wdXQo
+InRvdGFscyIsIHRvdGFscyk7DQp9DQplbHNlDQp7DQogICAgdHJ5IHsNCiAgICAgICAgaW50IGNv
+dW50ID0gSW50ZWdlci5wYXJzZUludChwcmV2Q291bnRTdHIpOw0KICAgICAgICB0b3RhbHMucHV0
+KG5hbWUsIEludGVnZXIudG9TdHJpbmcoY291bnQgKyAxKSk7DQogICAgfQ0KICAgIGNhdGNoKEV4
+Y2VwdGlvbiB4KSB7DQogICAgICAgIC8vIHdvbid0IGhhcHBlbjsgd2UncmUgaW4gY29tcGxldGUg
+Y29udHJvbA0KICAgIH0NCn0NCg==</value>
+</Values>

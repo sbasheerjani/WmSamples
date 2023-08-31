@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">ItemOut</value>
+          <value name="field_type">recref</value>
+          <value name="field_dim">1</value>
+          <value name="field_opt">false</value>
+          <value name="rec_closed">false</value>
+          <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_ItemOut</value>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">OrderDetail</value>
+          <value name="field_type">recref</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+          <value name="rec_closed">false</value>
+          <value name="rec_ref">sample.complexMapping.docTypes:OrderDetail</value>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+  </record>
+  <value name="node_comment">====================================================================
+
+     *** EXAMPLE CODE -- NOT INTENDED FOR PRODUCTION USE  ***
+
+====================================================================
+
+This service is an example using the try/catch Sequence method.  The purpose of the service is
+to build the detail Document of the purchase order.  The service performs the following
+functionality:
+
+1.   SEQUENCE that exits on SUCCESS
+1.1  SEQUENCE that exits on FAILURE.  This sequence acts as the try block in Java code.  If
+an error is thrown during processing any of the steps, it is exited immediately (like Java)
+and enters the other sequence step
+1.1.1  LOOP over the ItemOut Document list.  Notice on the properties tab of the LOOP the
+"in-array" is set to ItemOut and the "out-array" is set to LineItem.
+1.1.1.1  MAP to build the LineItem Document.  Notice the services that are children to the
+LOOP depict the LineItem and ItemOut Document lists as Documents.  This was done as a result
+of setting the in-array and out-array.  Once you are no longer a child of the LOOP, the
+LineItem and ItemOut elements will be depicted as Document lists (as in step below).
+1.1.2  MAP to build the OrderDetail Document which is the output of this service.
+1.2  SEQUENCE that exits on DONE.  This sequence acts as the catch block in Java.  If
+any errors are encountered in the above sequence, they are sent to this block of code.
+You can handle the error in any way you would like to as the developer.  The way done
+under this sequence is just an example and should not be used in production.
+1.2.1  Calls pub.flow:getLastError to get the last error that was thrown.
+1.2.2  Calls pub.flow:debugLog to send it to the debug log.
+1.2.3  Exits the flow.
+
+
+Do not run this service directly.  To run the example, you must execute the
+sample.complexMapping.standard.test:runComplexMapping service.
+
+This service is provided as an example of one way that you might
+accomplish this task. As a member of the WmSamples package, this
+service is subject to modification or removal, without notice,
+in future versions of the product.
+
+This service is not a member of the webMethods library and should
+not be used in a production solution.
+
+====================================================================
+</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="template_type">html</value>
+  <value name="check_internal_acls">no</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+</Values>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <null name="field_usereditable"/>
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="field_name">filename</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">fileContent</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_usereditable">false</value>
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="field_name">overwriteFlag</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+          <array name="field_options" type="value" depth="1">
+            <value>overwrite</value>
+            <value>append</value>
+          </array>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <null name="field_usereditable"/>
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="field_name">successFlag</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+  </record>
+  <value name="node_comment">====================================================================
+
+     *** EXAMPLE CODE -- NOT INTENDED FOR PRODUCTION USE  ***
+
+===================================================================
+
+This service is an example of how the Integration Server writes to a file the
+contents of a text variable.
+
+You should not run this service on its own, rather make sure that
+sample.io.fileWriting:openFileWriter,  sample.io.fileWriting:writeFileWriter,
+sample.io.fileWriting:flushFileWriter and sample.io.fileWriting.closeFileWriter are present.
+
+The service performs the following functionality:
+
+1.	Open a BufferedWriter stream for file writing.
+2.	Write file contents to an open BufferedWriter stream.
+3.	Flush the BufferedWriter stream.
+4.	Close the BufferedWriter stream.
+
+
+
+Input description:
+filename      	- a string with the full path of the file.
+fileContent   	- a string with the content of file.
+overwriteFlag 	- a string with a value of either "overwrite" or "append".
+
+Output description:
+successFlag   	- a string with a value of "true" or "false" indicating the success
+		or failure of this service.
+
+
+This service is provided as an example of one way that you might
+accomplish this task. As a member of the WmSamples package, this
+service is subject to modification or removal, without notice,
+in future versions of the product.
+
+This service is not a member of the webMethods library and should
+not be used in a production solution.
+
+====================================================================
+</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="check_internal_acls">no</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+</Values>

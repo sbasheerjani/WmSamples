@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 5.0::19981217::extensions to HTML 4.0//EN" "hmpro5.dtd">
+
+<HTML>
+
+<HEAD>
+<TITLE>Sample Folder Description</TITLE>
+</HEAD>
+
+<BODY>
+<H1 ALIGN="CENTER">webMethods Integration Server<BR>
+<FONT COLOR="#0080FF">dspExample</FONT> Sample</H1>
+<H2>Description</H2>
+<P>The examples illustrate the use of webMethods' dynamic server pages (DSP).  A DSP
+is a document embedded with special codes (tags) that instruct the webMethods Integration
+Server to perform certain actions when an HTTP (or HTTPS) client requests the document.
+DSPs are used to construct browser-based applications.</P>
+
+<P>Our example is a browser based application for viewing Sales Orders that are located
+in a specific directory on the file system.  Let's imagine these are Sales Orders that
+have just been created today.</P>
+
+<P>For more information on DSPs, refer to the ISTemplatesAndDSPs.pdf file located in the
+{ServerHome}\doc directory.</P>
+
+<H2>Setup Instructions</H2>
+<P>1.  Open the /WmSamples/Orders/Orders.dsp and OrderDetails.dsp file in a text editor.
+Review and understand all of the code contained in these files.  You will notice the files
+invoke services on the webMethods Server. The code is documented for your understanding</P>
+<P>2.  Open the Developer and understand what each of the services invoked is doing.</P>
+<P>3.  Go to:  http://{Server Home}:port/WmSamples/Orders/Orders.dsp</P>
+<P>4.  Enter your username and password.  According to the /WmSamples/Orders/.access file, you
+must be a member of the "Developer" group to run this service.</P>
+<P>5.  View the results</P>
+<P>6.  Click on one of the order numbers.  This will invoke the OrderDetails.dsp file.</P>
+<P>7.  View the results</P>
+<HR>
+</BODY>
+</HTML>
+

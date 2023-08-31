@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="false">
+  <COMMENT>Preliminary Sequence to set up the try/catch block</COMMENT>
+
+  <!-- nodes -->
+
+<SEQUENCE TIMEOUT="" EXIT-ON="SUCCESS">
+  <COMMENT>Preliminary Sequence to set up the try/catch block</COMMENT>
+
+  <!-- nodes -->
+
+<SEQUENCE TIMEOUT="" EXIT-ON="FAILURE">
+  <COMMENT>This service exits on failure and is the try block</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Build initial order header information</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/Total;2;0/Money;4;0;sample.complexMapping.docTypes.cXML:docType_Money/@currency;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/currency;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/Total;2;0/Money;4;0;sample.complexMapping.docTypes.cXML:docType_Money/*body;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/total;1;0">
+</MAPCOPY>
+
+<MAPINVOKE SERVICE="pub.date:dateTimeFormat" INVOKE-ORDER="0">
+
+  <!-- nodes -->
+
+<MAP MODE="INVOKEINPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/@orderDate;1;0" TO="/inString;1;0">
+</MAPCOPY>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/currentPattern;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">yyyy-MM-dd</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">currentPattern</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/newPattern;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">MM/dd/yyyy</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">newPattern</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="INVOKEOUTPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/value;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/date;1;0">
+</MAPCOPY>
+</MAP>
+</MAPINVOKE>
+</MAP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Build Ship To</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OrderRequestHeader</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OrderHeader</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes:OrderHeader</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OrderRequestHeader</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OrderHeader</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes:OrderHeader</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/ShipTo;4;0;sample.complexMapping.docTypes.cXML:docType_ShipTo/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/DeliverTo;1;1" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/ShipTo;4;0;sample.complexMapping.docTypes:ShipTo/Address;4;0;sample.complexMapping.docTypes:Address/DeliverTo;1;1">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/ShipTo;4;0;sample.complexMapping.docTypes.cXML:docType_ShipTo/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/Street;1;1" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/ShipTo;4;0;sample.complexMapping.docTypes:ShipTo/Address;4;0;sample.complexMapping.docTypes:Address/Street;1;1">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/ShipTo;4;0;sample.complexMapping.docTypes.cXML:docType_ShipTo/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/City;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/ShipTo;4;0;sample.complexMapping.docTypes:ShipTo/Address;4;0;sample.complexMapping.docTypes:Address/City;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/ShipTo;4;0;sample.complexMapping.docTypes.cXML:docType_ShipTo/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/State;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/ShipTo;4;0;sample.complexMapping.docTypes:ShipTo/Address;4;0;sample.complexMapping.docTypes:Address/State;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/ShipTo;4;0;sample.complexMapping.docTypes.cXML:docType_ShipTo/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/PostalCode;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/ShipTo;4;0;sample.complexMapping.docTypes:ShipTo/Address;4;0;sample.complexMapping.docTypes:Address/PostalCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/ShipTo;4;0;sample.complexMapping.docTypes.cXML:docType_ShipTo/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/Country;2;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/ShipTo;4;0;sample.complexMapping.docTypes:ShipTo/Address;4;0;sample.complexMapping.docTypes:Address/Country;2;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/ShipTo;4;0;sample.complexMapping.docTypes.cXML:docType_ShipTo/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/Email;4;0;sample.complexMapping.docTypes.cXML:docType_Email/*body;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/ShipTo;4;0;sample.complexMapping.docTypes:ShipTo/Address;4;0;sample.complexMapping.docTypes:Address/eMail;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/ShipTo;4;0;sample.complexMapping.docTypes.cXML:docType_ShipTo/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/Name;4;0;sample.complexMapping.docTypes.cXML:docType_Name/*body;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/ShipTo;4;0;sample.complexMapping.docTypes:ShipTo/Address;4;0;sample.complexMapping.docTypes:Address/OrganizationName;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Build Shipping</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/Shipping;4;0;sample.complexMapping.docTypes.cXML:docType_Shipping/@trackingDomain;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/Shipping;4;0;sample.complexMapping.docTypes:Shipping/TrackingDomain;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/Shipping;4;0;sample.complexMapping.docTypes.cXML:docType_Shipping/Description;4;0;sample.complexMapping.docTypes.cXML:docType_Description/*body;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/Shipping;4;0;sample.complexMapping.docTypes:Shipping/Description;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/Shipping;4;0;sample.complexMapping.docTypes.cXML:docType_Shipping/Money;4;0;sample.complexMapping.docTypes.cXML:docType_Money/*body;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/Shipping;4;0;sample.complexMapping.docTypes:Shipping/Price;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Build Bill To</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OrderRequestHeader</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OrderHeader</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes:OrderHeader</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OrderRequestHeader</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">OrderHeader</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes:OrderHeader</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/BillTo;2;0/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/DeliverTo;1;1" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/BillTo;4;0;sample.complexMapping.docTypes:BillTo/Address;4;0;sample.complexMapping.docTypes:Address/DeliverTo;1;1">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/BillTo;2;0/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/Street;1;1" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/BillTo;4;0;sample.complexMapping.docTypes:BillTo/Address;4;0;sample.complexMapping.docTypes:Address/Street;1;1">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/BillTo;2;0/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/City;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/BillTo;4;0;sample.complexMapping.docTypes:BillTo/Address;4;0;sample.complexMapping.docTypes:Address/City;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/BillTo;2;0/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/State;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/BillTo;4;0;sample.complexMapping.docTypes:BillTo/Address;4;0;sample.complexMapping.docTypes:Address/State;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/BillTo;2;0/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/PostalCode;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/BillTo;4;0;sample.complexMapping.docTypes:BillTo/Address;4;0;sample.complexMapping.docTypes:Address/PostalCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/BillTo;2;0/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/PostalAddress;4;0;sample.complexMapping.docTypes.cXML:docType_PostalAddress/Country;2;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/BillTo;4;0;sample.complexMapping.docTypes:BillTo/Address;4;0;sample.complexMapping.docTypes:Address/Country;2;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/BillTo;2;0/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/Email;4;0;sample.complexMapping.docTypes.cXML:docType_Email/*body;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/BillTo;4;0;sample.complexMapping.docTypes:BillTo/Address;4;0;sample.complexMapping.docTypes:Address/eMail;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/OrderRequestHeader;4;0;sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader/BillTo;2;0/Address;4;0;sample.complexMapping.docTypes.cXML:docType_Address/Name;4;0;sample.complexMapping.docTypes.cXML:docType_Name/*body;1;0" TO="/OrderHeader;4;0;sample.complexMapping.docTypes:OrderHeader/BillTo;4;0;sample.complexMapping.docTypes:BillTo/Address;4;0;sample.complexMapping.docTypes:Address/OrganizationName;1;0">
+</MAPCOPY>
+</MAP>
+</SEQUENCE>
+
+<SEQUENCE TIMEOUT="" EXIT-ON="DONE">
+  <COMMENT>This sequence exits on done and is the catch block</COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="pub.flow:getLastError" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Gets the last error that was encountered in this flow service</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="pub.flow:debugLog" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Uses the default logging level</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">debugLogInput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">message</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">function</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">level</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="true" FIELD="/message;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">Service Name = %lastError/service%
+
+Error Dump = %lastError/errorDump%</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">message</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<EXIT FROM="$flow" SIGNAL="SUCCESS" FAILURE-MESSAGE="">
+  <COMMENT></COMMENT>
+</EXIT>
+</SEQUENCE>
+</SEQUENCE>
+</FLOW>

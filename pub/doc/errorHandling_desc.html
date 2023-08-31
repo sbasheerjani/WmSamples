@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 5.0::19981217::extensions to HTML 4.0//EN" "hmpro5.dtd">
+
+<HTML>
+
+<HEAD>
+<TITLE>Sample Folder Description</TITLE>
+</HEAD>
+
+<BODY>
+<H1 ALIGN="CENTER">webMethods Integration Server<BR>
+<FONT COLOR="#0080FF">errorHandling</FONT> Sample</H1>
+<H2>Description</H2>
+<P>The examples in this folder illustrate how to handle service errors in the webMethods
+Integration Server.  There are two approaches to handling errors in this folder that both
+accomplish the exact same task.
+
+Approach one, sample.errorHandling:approach1, uses a Java wrapper service to invoke a
+service that could fail inside of a try/catch block.  If any error is thrown while
+processing the service that could fail such as a null pointer, divide by zero, etc,
+then it is caught in the catch block.
+
+Approach two, sample.errorHandling:approach2, uses a series of SEQUENCE statements
+to simulate a Java try/catch block.  If any error is thrown while
+processing the service that could fail such as a null pointer, divide by zero, etc,
+then it is caught in the SEQUENCE emulating a catch block.
+
+Which approach to use is up to you, the developer.  Keep in mind that if you use approach one,
+you will not be able to step into the flow services that are invoked by the Java wrapper.</P>
+
+<H2>Setup Requirements</H2>
+<P>There are two services that can be executed to show you the error handling examples.  The services
+are sample.errorHandling:approach1 and sample.errorHandling:approach2.  Hit F7 to begin stepping
+through the service.  When prompted for input, set the status equal to either "true" or "false".
+Detailed explanations of these services can be found in the Input/Output tab of each service. </P>
+<HR>
+</BODY>
+</HTML>
+

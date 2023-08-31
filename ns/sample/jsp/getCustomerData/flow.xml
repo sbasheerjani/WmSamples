@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT></COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">CustomerData</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_closed">true</value>
+        <value name="rec_ref">sample.jsp:customerData</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <list name="rec_fields">
+    </list>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/CustomerData;4;0;sample.jsp:customerData">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="CustomerID">1001</value>
+    <value name="LastName">Jones</value>
+    <value name="FirstName">Frank</value>
+    <record name="Address" javaclass="com.wm.util.Values">
+      <value name="Street">45 Main Street</value>
+      <value name="City">Smalltown</value>
+      <value name="Zip">12345</value>
+      <value name="Country">USA</value>
+    </record>
+    <array name="Phone" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="Type">Home</value>
+        <value name="PhoneNumber">(555) 392-2344</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="Type">Work</value>
+        <value name="PhoneNumber">(555) 449-5788</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="Type">Cell</value>
+        <value name="PhoneNumber">(555) 449-4897</value>
+      </record>
+    </array>
+    <array name="Children" type="value" depth="1">
+      <value>Matt</value>
+      <value>Kate</value>
+      <value>Al</value>
+    </array>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+</FLOW>

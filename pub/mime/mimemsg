@@ -1,0 +1,48 @@
+From - Fri Dec  8 13:54:12 2000
+Date: Fri, 08 Dec 2000 13:53:45 -0500
+X-Accept-Language: en
+MIME-Version: 1.0
+Subject: This is a multipart message
+Content-Type: multipart/mixed;
+ boundary="------------4D50C2E132CF597EF53D6B36"
+Status:   
+X-Mozilla-Status: 8001
+X-Mozilla-Status2: 00000000
+X-UIDL: 37a5f953000038ca
+
+This is a multi-part message in MIME format.
+--------------4D50C2E132CF597EF53D6B36
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+This is the main body of the message
+
+
+--------------4D50C2E132CF597EF53D6B36
+Content-Type: text/plain; charset=us-ascii;
+ name="part1.txt"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline;
+ filename="part1.txt"
+
+This is part one of a multipart message
+
+--------------4D50C2E132CF597EF53D6B36
+Content-Type: text/plain; charset=us-ascii;
+ name="part2.txt"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline;
+ filename="part2.txt"
+
+This is part two of a multipart message
+
+--------------4D50C2E132CF597EF53D6B36
+Content-Type: text/plain; charset=us-ascii;
+ name="part3.txt"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline;
+ filename="part3.txt"
+
+This is part three of a multipart message
+
+--------------4D50C2E132CF597EF53D6B36--

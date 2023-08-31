@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_nsName">sample.complexMapping.docTypes.cXML:docType_Contact</value>
+    <value name="node_pkg">WmSamples</value>
+    <value name="field_name">Contact</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">1</value>
+    <value name="field_opt">true</value>
+    <list name="rec_fields">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@role</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">instance</value>
+          <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+          <array name="enumeration" type="value" depth="1">
+            <value>endUser</value>
+            <value>administrator</value>
+            <value>purchasingAgent</value>
+            <value>technicalSupport</value>
+            <value>customerService</value>
+            <value>sales</value>
+          </array>
+          <value name="whiteSpace">none</value>
+        </record>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Name</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Name</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">PostalAddress</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_PostalAddress</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Email</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Email</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Phone</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Phone</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Fax</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Fax</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">URL</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_URL</value>
+      </record>
+    </list>
+    <value name="rec_closed">true</value>
+  </record>
+</Values>

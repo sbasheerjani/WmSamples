@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">recref</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <value name="rec_closed">false</value>
+      <value name="rec_ref">sample.soap.helpers.docTypes:docType_authCodeReq</value>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">recref</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <value name="rec_closed">false</value>
+      <value name="rec_ref">sample.soap.helpers.docTypes:docType_authCodeResp</value>
+    </record>
+  </record>
+  <value name="node_comment">====================================================================
+     *** EXAMPLE CODE -- NOT INTENDED FOR PRODUCTION USE  ***
+====================================================================
+
+This service is an example of a target for the SOAP RPC processor.
+It is invoked when the RPC processor receives a request for the
+procedure whose universal name (Qname) is composed of the namespace
+"http://www.expt.com/AUTH/" and the local name "getAuthCode".
+
+You can execute this service through the RPC processor by running
+WmSamples/sample.soap:buildRPC_sendHTTPSimple from Developer.
+
+This service is not a member of the webMethods library and should
+not be used in a production solution.
+
+====================================================================
+</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="template_type">html</value>
+  <value name="check_internal_acls">no</value>
+  <record name="svc_universal_name" javaclass="com.wm.util.Values">
+    <value name="xmlns">http://www.expt.com/AUTH/</value>
+    <value name="ncName">getAuthCode</value>
+  </record>
+  <value name="svc_in_validator_options">default</value>
+  <value name="svc_out_validator_options">default</value>
+</Values>

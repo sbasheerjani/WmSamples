@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="field_name">authCodeReq</value>
+          <value name="field_type">recref</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+          <value name="rec_closed">true</value>
+          <value name="rec_ref">sample.soap.helpers.docTypes:docType_authCodeReq</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">userName</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">password</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">recref</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <value name="rec_closed">false</value>
+      <value name="rec_ref">sample.soap.helpers.docTypes:docType_authCodeResp</value>
+    </record>
+  </record>
+  <value name="node_comment">====================================================================
+     *** EXAMPLE CODE -- NOT INTENDED FOR PRODUCTION USE  ***
+====================================================================
+
+This service uses the SOAP RPC client to submit a remote procedure
+call to a SOAP server and process the response.
+
+This service requests a remote procedure whose QName is represented
+by the namespace name "http://www.expt.com/AUTH/" and the local
+name "getAuthCode". On a webMethods Server, this QName is registered
+to the service sample.soap:targetSvc_rpcSimple.
+
+If you are not running the webMethods server on your local machine,
+set the URL in the &lt;address&gt; parameter in STEP 1 to point to
+the machine where your server is running.
+
+To run this service, you must provide values for the following input
+parameters:
+
+ -- &lt;authCodeReq/acct&gt; - any alphanumeric sequence of characters.
+
+ -- &lt;authCodeReq/amt&gt; - an alphanumeric sequence of characters that
+represents a decimal value (e.g., 150.00 or 75.45).
+
+ -- &lt;authCodeReq/loc&gt; - any alphanumeric sequence of characters in a location.
+
+ -- &lt;userName&gt; - a user name that belongs to the Developers ACL.
+
+ -- &lt;password&gt; - the password for &lt;userName&gt;.
+
+This service is not a member of the webMethods library and should
+not be used in a production solution.
+
+====================================================================
+</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="template_type">html</value>
+  <value name="check_internal_acls">no</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+</Values>

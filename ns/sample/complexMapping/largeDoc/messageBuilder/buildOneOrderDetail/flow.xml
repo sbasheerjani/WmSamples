@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="false">
+  <COMMENT>Preliminary Sequence to set up the try/catch block</COMMENT>
+
+  <!-- nodes -->
+
+<SEQUENCE TIMEOUT="" EXIT-ON="SUCCESS">
+  <COMMENT>Preliminary Sequence to set up the try/catch block</COMMENT>
+
+  <!-- nodes -->
+
+<SEQUENCE TIMEOUT="" EXIT-ON="FAILURE">
+  <COMMENT>This service exits on failure and is the try block</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT>Build LineItem Document list</COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">ItemOut</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_ItemOut</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">LineItem</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes:LineItem</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">ItemOut</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_ItemOut</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ItemOut;4;0;sample.complexMapping.docTypes.cXML:docType_ItemOut/@quantity;1;0" TO="/LineItem;4;0;sample.complexMapping.docTypes:LineItem/Quantity;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ItemOut;4;0;sample.complexMapping.docTypes.cXML:docType_ItemOut/ItemDetail;2;0/UnitPrice;2;0/Money;4;0;sample.complexMapping.docTypes.cXML:docType_Money/*body;1;0" TO="/LineItem;4;0;sample.complexMapping.docTypes:LineItem/Price;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ItemOut;4;0;sample.complexMapping.docTypes.cXML:docType_ItemOut/ItemID;2;0/SupplierPartID;1;0" TO="/LineItem;4;0;sample.complexMapping.docTypes:LineItem/ProductNbr;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ItemOut;4;0;sample.complexMapping.docTypes.cXML:docType_ItemOut/ItemDetail;2;0/UnitOfMeasure;1;0" TO="/LineItem;4;0;sample.complexMapping.docTypes:LineItem/UnitOfMeasure;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ItemOut;4;0;sample.complexMapping.docTypes.cXML:docType_ItemOut/ItemDetail;2;0/Description;4;1;sample.complexMapping.docTypes.cXML:docType_Description" TO="/LineItem;4;0;sample.complexMapping.docTypes:LineItem/Description;2;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ItemOut;4;0;sample.complexMapping.docTypes.cXML:docType_ItemOut/ItemDetail;2;0/Classification;2;1/*body;1;0" TO="/LineItem;4;0;sample.complexMapping.docTypes:LineItem/Classification;2;1/*body;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="Link" FROM="/ItemOut;4;0;sample.complexMapping.docTypes.cXML:docType_ItemOut/SupplierID;2;0/*body;1;0" TO="/LineItem;4;0;sample.complexMapping.docTypes:LineItem/Sku;1;0">
+</MAPCOPY>
+</MAP>
+</SEQUENCE>
+
+<SEQUENCE TIMEOUT="" EXIT-ON="DONE">
+  <COMMENT>This sequence exits on done and is the catch block</COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="pub.flow:getLastError" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Gets the last error that was encountered in this flow service</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="pub.flow:debugLog" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Uses the default logging level</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">debugLogInput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">message</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">function</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">level</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+      </record>
+    </array>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="true" FIELD="/message;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">Service Name = %lastError/service%
+
+Error Dump = %lastError/errorDump%</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">message</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<EXIT FROM="$flow" SIGNAL="SUCCESS" FAILURE-MESSAGE="">
+  <COMMENT></COMMENT>
+</EXIT>
+</SEQUENCE>
+</SEQUENCE>
+</FLOW>

@@ -1,0 +1,23 @@
+<SalesOrder>
+  <orderNumber>1200000476</orderNumber>
+  <orderDate>20001016</orderDate>
+  <customerNumber>00100055</customerNumber>
+  <OrderLine>
+    <lineNumber>000010</lineNumber>
+    <materialNumber>XJR-500</materialNumber>
+    <quantity>200.00</quantity>
+    <deliveryDate>20001111</deliveryDate>
+  </OrderLine>
+  <OrderLine>
+    <lineNumber>000020</lineNumber>
+    <materialNumber>XJR-600</materialNumber>
+    <quantity>300.00</quantity>
+    <deliveryDate>20001111</deliveryDate>
+  </OrderLine>
+  <OrderLine>
+    <lineNumber>000030</lineNumber>
+    <materialNumber>WIDGET</materialNumber>
+    <quantity>1000.00</quantity>
+    <deliveryDate>20001215</deliveryDate>
+  </OrderLine>
+</SalesOrder>

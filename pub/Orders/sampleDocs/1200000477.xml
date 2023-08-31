@@ -1,0 +1,11 @@
+<SalesOrder>
+  <orderNumber>1200000477</orderNumber>
+  <orderDate>20001011</orderDate>
+  <customerNumber>00200011</customerNumber>
+  <OrderLine>
+    <lineNumber>000010</lineNumber>
+    <materialNumber>ZTR-800</materialNumber>
+    <quantity>5.00</quantity>
+    <deliveryDate>20001118</deliveryDate>
+  </OrderLine>
+</SalesOrder>

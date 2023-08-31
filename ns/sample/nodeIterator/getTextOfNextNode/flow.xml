@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="pub.xml:getNextXMLNode">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/iterator;3;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<BRANCH TIMEOUT="" SWITCH="/next">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE NAME="$default" TIMEOUT="" SERVICE="pub.xml:queryXMLNode">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+
+  <!-- nodes -->
+
+<MAPSET OVERWRITE="false" VARIABLES="false" FIELD="/fields;2;1">
+  <DATA ENCODING="b64" I18N="true">Cgo8VmFsdWVzIHZlcnNpb249IjIuMCI+CiAgPGFycmF5IG5hbWU9InhtbCIgdHlwZT0icmVjb3Jk
+IiBkZXB0aD0iMSI+CiAgICA8cmVjb3JkIGphdmFjbGFzcz0iY29tLndtLnV0aWwuVmFsdWVzIj4K
+ICAgICAgPHZhbHVlIG5hbWU9Im5hbWUiPnRleHQ8L3ZhbHVlPgogICAgICA8dmFsdWUgbmFtZT0i
+cmVzdWx0VHlwZSI+U3RyaW5nPC92YWx1ZT4KICAgICAgPHZhbHVlIG5hbWU9InF1ZXJ5VHlwZSI+
+WFFMPC92YWx1ZT4KICAgICAgPHZhbHVlIG5hbWU9InF1ZXJ5Ij50ZXh0KCk8L3ZhbHVlPgogICAg
+ICA8bnVsbCBuYW1lPSJmaWVsZHMiLz4KICAgICAgPHZhbHVlIG5hbWU9Im9ubnVsbCI+Y29udGlu
+dWU8L3ZhbHVlPgogICAgPC9yZWNvcmQ+CiAgPC9hcnJheT4KPC9WYWx1ZXM+Cg==</DATA>
+</MAPSET>
+
+<MAPCOPY NAME="MapCopy" FROM="/next;2;0/node;3;0" TO="/node;3;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/next;2;0/name;1;0" TO="/name;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/fields;2;1">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/nsDecls;2;1">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/node;3;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/next;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/iterator;3;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<MAP NAME="$null" MODE="STANDALONE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAPSET NAME="MapSet" OVERWRITE="true" VARIABLES="false" FIELD="/name;1;0">
+  <DATA ENCODING="b64" I18N="true">Cgo8VmFsdWVzIHZlcnNpb249IjIuMCI+CiAgPHZhbHVlIG5hbWU9InhtbCI+JGRvbmUkPC92YWx1
+ZT4KICA8cmVjb3JkIG5hbWU9InR5cGUiIGphdmFjbGFzcz0iY29tLndtLnV0aWwuVmFsdWVzIj4K
+ICAgIDx2YWx1ZSBuYW1lPSJub2RlX3R5cGUiPnVua25vd248L3ZhbHVlPgogICAgPHZhbHVlIG5h
+bWU9ImZpZWxkX25hbWUiPm5hbWU8L3ZhbHVlPgogICAgPHZhbHVlIG5hbWU9ImZpZWxkX3R5cGUi
+PnN0cmluZzwvdmFsdWU+CiAgICA8dmFsdWUgbmFtZT0iZmllbGRfZGltIj4wPC92YWx1ZT4KICAg
+IDx2YWx1ZSBuYW1lPSJmaWVsZF9vcHQiPmZhbHNlPC92YWx1ZT4KICAgIDxhcnJheSBuYW1lPSJm
+aWVsZF9vcHRpb25zIiB0eXBlPSJ2YWx1ZSIgZGVwdGg9IjEiPgogICAgPC9hcnJheT4KICA8L3Jl
+Y29yZD4KPC9WYWx1ZXM+Cg==</DATA>
+</MAPSET>
+
+<MAPDELETE NAME="MapDelete" FIELD="/next;2;0">
+</MAPDELETE>
+</MAP>
+</BRANCH>
+</FLOW>

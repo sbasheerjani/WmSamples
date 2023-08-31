@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_nsName">sample.complexMapping.docTypes.cXML:docType_OrderRequestHeader</value>
+    <value name="node_pkg">WmSamples</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">false</value>
+    <list name="rec_fields">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@orderID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+              <value name="ncName">string</value>
+            </record>
+          </array>
+        </record>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@orderDate</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+              <value name="ncName">string</value>
+            </record>
+          </array>
+        </record>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@type</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">instance</value>
+          <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+          <array name="enumeration" type="value" depth="1">
+            <value>new</value>
+            <value>update</value>
+            <value>delete</value>
+          </array>
+          <value name="whiteSpace">none</value>
+        </record>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@requisitionID</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+              <value name="ncName">string</value>
+            </record>
+          </array>
+        </record>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@shipComplete</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">instance</value>
+          <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+          <array name="enumeration" type="value" depth="1">
+            <value>yes</value>
+          </array>
+          <value name="whiteSpace">none</value>
+        </record>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Total</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <list name="rec_fields">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">Money</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">false</value>
+            <value name="rec_closed">false</value>
+            <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Money</value>
+          </record>
+        </list>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">ShipTo</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_ShipTo</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">BillTo</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">false</value>
+        <list name="rec_fields">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">Address</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">false</value>
+            <value name="rec_closed">false</value>
+            <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Address</value>
+          </record>
+        </list>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Shipping</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Shipping</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Tax</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Tax</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Payment</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <list name="rec_fields">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">PCard</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">false</value>
+            <list name="rec_fields">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@number</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">false</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">string</value>
+                    </record>
+                  </array>
+                </record>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@expiration</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">false</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">string</value>
+                    </record>
+                  </array>
+                </record>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@name</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">string</value>
+                    </record>
+                  </array>
+                </record>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="field_name">PostalAddress</value>
+                <value name="field_type">recref</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <value name="rec_closed">false</value>
+                <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_PostalAddress</value>
+              </record>
+            </list>
+            <value name="rec_closed">true</value>
+          </record>
+        </list>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Contact</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Contact</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Comments</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Comments</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Followup</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <list name="rec_fields">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">URL</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">false</value>
+            <value name="rec_closed">false</value>
+            <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_URL</value>
+          </record>
+        </list>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Extrinsic</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="rec_closed">false</value>
+        <value name="rec_ref">sample.complexMapping.docTypes.cXML:docType_Extrinsic</value>
+      </record>
+    </list>
+    <value name="rec_closed">false</value>
+  </record>
+</Values>

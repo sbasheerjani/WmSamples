@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 5.0::19981217::extensions to HTML 4.0//EN" "hmpro5.dtd">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./complexMappingLrgDoc_desc_files/filelist.xml">
+<link rel=Edit-Time-Data href="./complexMappingLrgDoc_desc_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Sample Folder Description</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Avner Mileevsky</o:Author>
+  <o:LastAuthor>Avner Mileevsky</o:LastAuthor>
+  <o:Revision>5</o:Revision>
+  <o:TotalTime>10</o:TotalTime>
+  <o:Created>2001-05-30T18:33:00Z</o:Created>
+  <o:LastSaved>2001-05-30T18:43:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>140</o:Words>
+  <o:Characters>798</o:Characters>
+  <o:Company>Dell Computer Corporation</o:Company>
+  <o:Lines>6</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>980</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h1 align=center style='text-align:center'>webMethods Integration Server<br>
+<span style='color:#0080FF'>complexMapping a Large Document</span> Sample</h1>
+
+<h2>Description</h2>
+
+<p>The examples in this folder illustrate how to develop and implement a
+complex mapping. The example in this folder has a company (XYZ corp.) that
+receives a cXML Order Request from one of its suppliers and needs to map it
+into their internal Purchase Order format for processing. This example utilizes a
+different approach to loading the document then the <a
+href="complexMapping_desc.html">ComplexMapping</a> example. In order to better
+manage memory, a node iterator is used to load the document node by node, as a consequence
+this example is has a small speed performance decrease from <a
+href="complexMapping_desc.html">ComplexMapping</a>. </p>
+
+<p>This is a common scenario for organizations. They will map cXML, OBI, xCBL,
+etc into their internal standard in order to build a layer of abstraction. Once
+in their internal format, they will send it to the appropriate backend system
+for processing.</p>
+
+<h2>Setup Requirements</h2>
+
+<p>To execute the complex mapping example in this folder, you just need to run
+the sample.complexMapping.test:runComplexMapping service. It sets the input cXML
+string, converts it to a node, and then invokes the
+sample.complexMapping.messageBuilder:buildPurchaseOrder service. Detailed
+explanations of these services can be found in the Input/Output tab of each
+service. </p>
+
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

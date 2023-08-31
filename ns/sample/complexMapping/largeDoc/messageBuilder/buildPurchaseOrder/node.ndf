@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">node</value>
+          <value name="field_type">object</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="field_opt">false</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">newPurchaseOrder</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">false</value>
+        </record>
+      </list>
+      <value name="rec_closed">false</value>
+    </record>
+  </record>
+  <value name="node_comment">====================================================================
+
+     *** EXAMPLE CODE -- NOT INTENDED FOR PRODUCTION USE  ***
+
+====================================================================
+
+This service is an example using the try/catch Sequence method.  The purpose of the service is
+to show the developer how to perform a complex mapping using the node iterator.  As you can see,
+the building of the new purchase order is broken up into two steps: buildOrderDetail and
+buildOrderHeader. Building the entire purchase order could be done in this one flow service, but
+was broken up for readability and ease of maintenance.  The service performs the following
+functionality:
+
+1.   SEQUENCE that exits on SUCCESS
+1.1  SEQUENCE that exits on FAILURE.  This sequence acts as the try block in Java code.  If
+an error is thrown during processing any of the steps, it is exited immediately (like Java)
+and enters the other sequence step
+1.1.1  Calls pub.xml:getXMLNodeIterator to Load the XML node via the node iterator. Please note, the
+values set for the "service in" of the service.
+1.1.2  Calls sample.complexMapping.largeDoc.messageBuilder:getHeader to load the 1st node in the Document.
+1.1.3  Calls sample.complexMapping.largeDoc.messageBuilder:getHeader to build the purchase
+order's header Document.
+
+
+1.1.4 Calls sample.complexMapping.largeDoc.messageBuilder:buildOrderDetail to build the purchase
+order's detail Document.
+1.1.5  Maps the header and detail Document into the purchase order Document.
+1.1.6 Calls pub.xml:documentToXMLString to convert the purchase order Document into an XML String
+that is returned to the calling application (sample.complexMapping.largeDoc.test:runComplexMapping).
+Notice the set values:
+	documentName = sample.complexMapping.docTypes:PurchaseOrder
+
+The reason the documentName is set is to ensure the xml string is built with all of the
+elements in the proper position (i.e. the header is above the detail info).
+
+1.2  SEQUENCE that exits on DONE.  This sequence acts as the catch block in Java.  If
+any errors are encountered in the above sequence, they are sent to this block of code.
+You can handle the error in any way you would like to as the developer.  The way done
+under this sequence is just an example and should not be used in production.
+1.2.1  Calls pub.flow:getLastError to get the last error that was thrown.
+1.2.2  Calls pub.flow:debugLog to send it to the debug log.
+1.2.3  Exits the flow.
+
+Do not run this service directly.  To run the example, you must execute the
+sample.complexMapping.largeDoc.test:runComplexMapping service.
+
+This service is provided as an example of one way that you might
+accomplish this task. As a member of the WmSamples package, this
+service is subject to modification or removal, without notice,
+in future versions of the product.
+
+This service is not a member of the webMethods library and should
+not be used in a production solution.
+
+====================================================================</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="template_type">html</value>
+  <value name="audit_level">off</value>
+  <value name="check_internal_acls">no</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+</Values>

@@ -1,0 +1,17 @@
+#
+#   	Custom config file
+#	(loaded by sample.propertyFile:loadProperties)
+#
+#  This is a sample Java properties file that is read (loaded) into memory by the
+#  sample.propertyFile:loadProperties service.  The loadProperties service is defined
+#  as a startup service in order to expedite the call to get a property.  You can include
+#  any key/value pair that you wish as long as they are in the format "key=value".
+
+#  Custom config fields
+FAVORITE_INTEGRATION_SOLUTION=webMethods
+USE_SSL=NO
+CLUSTER_SERVER=14.232.23.17:5555
+ENVIRONMENT=QA
+USER=Administrator
+PASSWORD=manage
+ANYTHING=YOU_WANT

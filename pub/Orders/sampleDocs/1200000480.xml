@@ -1,0 +1,17 @@
+<SalesOrder>
+  <orderNumber>1200000480</orderNumber>
+  <orderDate>20001016</orderDate>
+  <customerNumber>00300025</customerNumber>
+  <OrderLine>
+    <lineNumber>000010</lineNumber>
+    <materialNumber>XJR-500</materialNumber>
+    <quantity>500.00</quantity>
+    <deliveryDate>20001115</deliveryDate>
+  </OrderLine>
+  <OrderLine>
+    <lineNumber>000020</lineNumber>
+    <materialNumber>XJR-600</materialNumber>
+    <quantity>300.00</quantity>
+    <deliveryDate>20001116</deliveryDate>
+  </OrderLine>
+</SalesOrder>

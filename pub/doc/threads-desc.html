@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 5.0::19981217::extensions to HTML 4.0//EN" "hmpro5.dtd">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./threads-desc_files/filelist.xml">
+<link rel=Edit-Time-Data href="./threads-desc_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Sample Folder Description</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Avner Mileevsky</o:Author>
+  <o:LastAuthor>rpandit</o:LastAuthor>
+  <o:Revision>8</o:Revision>
+  <o:TotalTime>61</o:TotalTime>
+  <o:Created>2001-05-23T02:40:00Z</o:Created>
+  <o:LastSaved>2002-12-05T15:10:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>377</o:Words>
+  <o:Characters>2149</o:Characters>
+  <o:Company>Dell Computer Corporation</o:Company>
+  <o:Lines>17</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2639</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p
+	{margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:1870753379;
+	mso-list-type:hybrid;
+	mso-list-template-ids:768756344 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h1 align=center style='text-align:center'>webMethods Integration Server<br>
+<span style='color:#0080FF'>threads</span> Sample</h1>
+
+<h2>Description</h2>
+
+<p>The examples in this folder illustrate how to spawn new service threads. </p>
+
+<p>The code in every example is commented in detail to help the developer get a
+better understanding of how to work with threads in webMethods IS. </p>
+
+<p>The following is an example scenario: Company xyz receives a purchase order.
+Before the order can be sent to the backend system a few checks need to take
+place (but in no particular order). These checks may include checking the
+credit card number, validate the zip code, etc (all of which can be
+accomplished via threads). After the checks have taken place, the results and
+decide whether or not to place the order. <br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<h2>Notes</h2>
+
+<p>The pipeline is an IData object and the default implementation of IData is
+not thread safe. Some objects that are put into the pipeline are also not
+thread safe. This means that when spawning a new service you must be aware of
+the pipeline and the data in it that is passed to each thread. As a result
+there are a number of approaches to ensure that the pipeline and the data in it
+doesn’t get corrupted:</p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>If the data each thread needs are unique subsets of each
+other: Create a new pipeline (e.g. 'pipelet') for each thread using
+IDataFactory.create() and fill it with only the data that new thread needs to
+work on (in our samples this approach is called copyPipelineObjects). </p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>If the data each thread needs overlaps, but the data is all
+simple objects (no IDatas). Create a shallow clone of the pipeline using
+IDataUtil.clone().(in our samples this approach is called shallowClone). </p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>If the data each thread needs overlaps and the data contains
+deeply nested complex objects, but objects can be created for relatively little
+cost then create a new pipeline and fill it with a copy of the newly created
+objects. For example, the output of xmlNodeToDocument is PO and it needs to be
+processed to create a PO Ack in one thread, while the PO is being mapped to an internal
+format on another thread. The pipeline has a lot of other objects in it that
+only one thread needs. Create a new ‘pipelet’ and fill it with a newly generated
+copy of the data by calling the generation service twice (in our samples this
+approach is called loadDataTwice). </p>
+
+<p style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>If the data each thread needs overlap and are deeply nested
+complex objects that will cost a lot to create twice. Call
+IDataUtil.deepClone().(in our samples this approach is called deepClone). </p>
+
+<p><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2>Setup Requirements</h2>
+
+<p>None</p>
+
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

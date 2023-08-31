@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="shared">CS8vIGluaXRpYWxpemUgc3RhdGljIHZhcmlhYmxlcw0KCXByaXZhdGUgc3RhdGljIFN0cmluZyBQ
+QUNLQUdFID0gIldtU2FtcGxlcyI7DQoJcHJpdmF0ZSBzdGF0aWMgU3RyaW5nIENPTkZJR19GSUxF
+ID0gInlvdXJDdXN0b21Db25maWcuY25mIjsNCg0KICAgIHByaXZhdGUgc3RhdGljIGJvb2xlYW4g
+cHJvcGVydGllc0xvYWRlZCA9IGZhbHNlOw0KICAgIHByaXZhdGUgc3RhdGljIFByb3BlcnRpZXMg
+cHJvcGVydGllcyA9IG51bGw7DQoNCiAgICAvKiogZ2V0cyBhIHByb3BlcnR5IGZyb20gdGhlIGNv
+bmZpZyBmaWxlICoqLw0KICAgIHB1YmxpYyBzdGF0aWMgU3RyaW5nIGdldFByb3BlcnR5KCBTdHJp
+bmcga2V5ICkNCiAgICB7DQoJCS8vIGNoZWNrIHRvIHNlZSBpZiB0aGUgcHJvcGVydGllcyBoYXZl
+IGJlZW4gbG9hZGVkDQogICAgICAgIGlmICghcHJvcGVydGllc0xvYWRlZCkgew0KCQkJdHJ5DQoJ
+CQl7DQoJCQkJdXRpbC5Mb2cubG9nKCJTaGFyZWQgc2FtcGxlLnByb3BlcnR5RmlsZS5nZXRQcm9w
+ZXJ0eSgpIG1ldGhvZCBwcm9wZXJ0aWVzIGhhdmUgbm90IGJlZW4gbG9hZGVkIiwgInNhbXBsZS5w
+cm9wZXJ0eUZpbGUiKTsNCiAgICAgICAgICAgIAlsb2FkUHJvcGVydGllcyggbnVsbCApOw0KCQkJ
+fQ0KCQkJY2F0Y2ggKEV4Y2VwdGlvbiBlKQ0KCQkJew0KICAgICAgICAgICAgICAgIHRyeSB7DQog
+ICAgICAgICAgICAgICAgICAgIHV0aWwuTG9nLmxvZygiU2hhcmVkIHNhbXBsZS5wcm9wZXJ0eUZp
+bGUuZ2V0UHJvcGVydHkoKSBtZXRob2QgZXJyb3IgaW4gY2FsbCB0byBsb2FkUHJvcGVydGllczog
+IiArIGUudG9TdHJpbmcoKSwgInNhbXBsZS5wcm9wZXJ0eUZpbGUiKTsNCiAgICAgICAgICAgICAg
+ICB9IGNhdGNoIChTZXJ2aWNlRXhjZXB0aW9uIHh4eCkgeyAvKiBpZ25vcmUgKi8gfQ0KCQkJfQ0K
+ICAgICAgICB9DQogICAgICAgIGlmICggcHJvcGVydGllcyA9PSBudWxsICkNCiAgICAgICAgICAg
+IHJldHVybiggbnVsbCApOw0KICAgICAgICBlbHNlDQogICAgICAgICAgICByZXR1cm4oIHByb3Bl
+cnRpZXMuZ2V0UHJvcGVydHkoIGtleSApICk7DQogICAgfQ0K</value>
+  <value name="encodeutf8">true</value>
+  <array name="imports" type="value" depth="1">
+    <value>java.io.*</value>
+    <value>java.util.*</value>
+    <value>com.wm.app.b2b.server.*</value>
+    <value>com.wm.util.coder.*</value>
+  </array>
+</Values>

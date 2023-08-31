@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">stall</value>
+  <array name="sig" type="value" depth="1">
+    <value>[i] field:0:required time</value>
+  </array>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">Ly9kZWZpbmUgaW5wdXQgdmFyaWFibGVzIA0KSURhdGFDdXJzb3IgaWRjUGlwZWxpbmUgPSBwaXBl
+bGluZS5nZXRDdXJzb3IoKTsNClN0cmluZyB0aW1lOw0KDQppZiAoaWRjUGlwZWxpbmUuZmlyc3Qo
+InRpbWUiKSkNCnsNCgkJLy9nZXQgdGhlIHRpbWUgb3V0IG9mIHRoZSBwaXBlbGluZQkJCQkJCQ0K
+CQl0aW1lPSAoU3RyaW5nKWlkY1BpcGVsaW5lLmdldFZhbHVlKCk7CQ0KDQp9DQovL2lmIGl0IGlz
+IG5vdCBpbiB0aGUgcGlwZWxpbmUsIHRoZW4gaGFuZGxlIHRoZSBlcnJvcg0KZWxzZQ0Kew0KCXV0
+aWwuTG9nLmxvZygiRXJyb3IgZXhlY3V0aW5nIHRoZSBzYW1wbGUudGhyZWFkcy51dGlscy5zdGFs
+bDogcmVxdWlyZWQgcGFyYW1ldGVyICd0aW1lJyBtaXNzaW5nLiIsICJzYW1wbGUudGhyZWFkcyIp
+Ow0KCQkNCgkvL0Fsd2F5cyBkZXN0cm95IGN1cnN1cnMgdGhhdCB5b3UgY3JlYXRlZA0KCWlkY1Bp
+cGVsaW5lLmRlc3Ryb3koKTsJDQoNCglyZXR1cm47DQp9DQoNCnRyeQ0Kew0KVGhyZWFkLnNsZWVw
+KCBJbnRlZ2VyLnBhcnNlSW50KHRpbWUpICoxMDAwICk7DQp9DQpjYXRjaCAoIEludGVycnVwdGVk
+RXhjZXB0aW9uIGUgKSANCnsNCgkvL1ByaW50IHRoZSBleGNlcHRpb24gb3V0IHRvIHN0YW5kYXJk
+IG91dHB1dA0KCXV0aWwuTG9nLmxvZygiRXJyb3IgZXhlY3V0aW5nIHNhbXBsZS50aHJlYWRzLmVu
+ZFNwYXduZWRUaHJlYWQiICsgZS50b1N0cmluZygpLCAic2FtcGxlLnRocmVhZHMiKTsNCn0JDQoN
+CnV0aWwuTG9nLmxvZygic2FtcGxlLnRocmVhZHMudXRpbHMuc3RhbGw6U3RhbGwgZmluaXNoZWQi
+ICwgInNhbXBsZS50aHJlYWRzIik7DQo=</value>
+</Values>

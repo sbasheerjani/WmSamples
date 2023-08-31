@@ -1,0 +1,114 @@
+
+<?xml version="1.0"?>
+
+<FLOW VERSION="3.0" CLEANUP="false">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE NAME="" TIMEOUT="" SERVICE="sample.nodeIterator:xmlNodeToIterator">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/criteria;1;1">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/nsDecls;2;1">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/movingWindow;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/url;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/expandDTD;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<RETRY NAME="" TIMEOUT="" COUNT="-1" BACK-OFF="" LOOP-ON="SUCCESS">
+  <COMMENT>Repeat until EXIT or failure</COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE SERVICE="pub.xml:getNextXMLNode">
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<BRANCH NAME="" TIMEOUT="" SWITCH="next">
+  <COMMENT>REPEAT ends when 'next' is null</COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE NAME="$default" TIMEOUT="" SERVICE="sample.nodeIterator:updateNodeTotals">
+  <COMMENT>increment counts</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<EXIT NAME="$null" FROM="$loop" SIGNAL="SUCCESS" FAILURE-MESSAGE="">
+  <COMMENT>exits the REPEAT</COMMENT>
+</EXIT>
+</BRANCH>
+
+<MAP NAME="" TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>map exists to let you see results before next iteration</COMMENT>
+</MAP>
+</RETRY>
+
+<INVOKE NAME="" TIMEOUT="" SERVICE="pub.xml:freeXMLNode">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/node;3;0" TO="/rootNode;3;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/iterator;3;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/node;3;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/$retries;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/next;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/rootNode;3;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+</FLOW>

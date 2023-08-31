@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">loadCertificateObjectList</value>
+  <array name="sig" type="value" depth="1">
+    <value>[i] field:0:required cert1</value>
+    <value>[i] field:0:optional cert2</value>
+    <value>[o] object:1:required certificates</value>
+  </array>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">DQoNCnRyeSB7DQoJT2JqZWN0IG9iaiA9IFZhbHVlc0VtdWxhdG9yLmdldChwaXBlbGluZSwiY2Vy
+dDEiKTsNCg0KCWJ5dGVbXSBjZXJ0ID0gbnVsbDsNCg0KCWJ5dGVbXSBjYWNlcnQgPSBudWxsOw0K
+DQogICAgaWYgKG9iaiAhPSBudWxsKQ0KCXsNCgkJRmlsZSBjZXJ0RmlsZSA9IG5ldyBGaWxlKChT
+dHJpbmcpb2JqKTsNCg0KCQljZXJ0ID0gRmlsZXMucmVhZEZ1bGx5KGNlcnRGaWxlKTsNCg0KCS8v
+CWlhaWsueDUwOS5YNTA5Q2VydGlmaWNhdGUgeDUwOSA9IG5ldyBpYWlrLng1MDkuWDUwOUNlcnRp
+ZmljYXRlKGNlcnQpOw0KDQoJLy8JdXRpbC5Mb2cubG9nKCJDZXJ0SW5mbzogIit4NTA5LnRvU3Ry
+aW5nKCksICJzYW1wbGUuc21pbWUiKTsNCgl9DQoNCglvYmogPSBWYWx1ZXNFbXVsYXRvci5nZXQo
+cGlwZWxpbmUsImNlcnQyIik7DQoNCglpZiAob2JqICE9IG51bGwpDQoJew0KCQlGaWxlIGNhY2Vy
+dEZpbGUgPSBuZXcgRmlsZSgoU3RyaW5nKW9iaik7DQoNCgkJY2FjZXJ0ID0gRmlsZXMucmVhZEZ1
+bGx5KGNhY2VydEZpbGUpOw0KCX0NCg0KCU9iamVjdFtdIGNlcnRzMiA9IG5ldyBPYmplY3RbMl07
+DQoNCglPYmplY3RbXSBjZXJ0czEgPSBuZXcgT2JqZWN0WzFdOw0KDQoJVmVjdG9yIHRtcCA9IG5l
+dyBWZWN0b3IoKTsNCg0KCWlmICggKGNlcnQgIT0gbnVsbCkgJiYgKGNhY2VydCAhPSBudWxsKSAp
+DQoNCgl7CXRtcC5hZGRFbGVtZW50KGNlcnQpOyB0bXAuYWRkRWxlbWVudChjYWNlcnQpO30NCg0K
+CWVsc2UgaWYgKCAoY2VydCA9PSBudWxsKSAmJiAoY2FjZXJ0ICE9IG51bGwpICkNCg0KCQl0bXAu
+YWRkRWxlbWVudChjYWNlcnQpOw0KDQoJZWxzZSBpZiAoIChjZXJ0ICE9IG51bGwpICYmIChjYWNl
+cnQgPT0gbnVsbCkgKQ0KDQoJCXRtcC5hZGRFbGVtZW50KGNlcnQpOw0KDQoJaWYgKHRtcC5zaXpl
+KCkgPT0gMikNCgl7DQoJCXRtcC5jb3B5SW50byhjZXJ0czIpOw0KDQoJICAgIFZhbHVlc0VtdWxh
+dG9yLnB1dChwaXBlbGluZSwiY2VydGlmaWNhdGVzIixjZXJ0czIpOw0KCX0NCgllbHNlDQoJew0K
+CQl0bXAuY29weUludG8oY2VydHMxKTsNCg0KCSAJVmFsdWVzRW11bGF0b3IucHV0KHBpcGVsaW5l
+LCJjZXJ0aWZpY2F0ZXMiLGNlcnRzMSk7DQoJfQ0KfSBjYXRjaCAoRXhjZXB0aW9uIGUpIHsNCg0K
+CWUucHJpbnRTdGFja1RyYWNlKCk7DQoNCn0NCg0K</value>
+</Values>

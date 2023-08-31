@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <value name="svc_spec">pub.soap.utils:requestResponseSpec</value>
+  <value name="node_comment">====================================================================
+     *** EXAMPLE CODE -- NOT INTENDED FOR PRODUCTION USE  ***
+====================================================================
+
+This service is an example of a custom SOAP processor. It takes the
+soapRequestData and soapResponseData objects that it receives from
+the SOAP message handler, extracts information from the header and
+body of the request message, and places that information in a queue.
+Then, it composes the appropriate response message depending on whether
+or not the information was placed in the queue successfully.
+
+If you want to execute this service in Developer, enable the
+"acquireSOAPMessage" step at the top of the flow. This step will build
+a soapRequestData and soapResponseData object, simulating the pipeline
+that this service would receive from the message handler.
+
+If you want to execute this service through the SOAP message handler, do
+the following:
+1) Disable the "acquireSOAPMessage" step at the top of the flow.
+2) Run WmSamples/sample.soap:registerCustomProcessor to register this service
+with the message handler.
+3) Run WmSamples/sample.soap:buildMsg_sendHTTP to submit a message to this processor.
+
+This service is not a member of the webMethods library and should
+not be used in a production solution.
+
+====================================================================
+</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="template_type">html</value>
+  <value name="audit_level">off</value>
+  <value name="check_internal_acls">no</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+  <value name="auditoption">0</value>
+  <record name="auditsettings" javaclass="com.wm.util.Values">
+    <value name="document_data">0</value>
+    <value name="startExecution">false</value>
+    <value name="stopExecution">false</value>
+    <value name="onError">true</value>
+  </record>
+</Values>

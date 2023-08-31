@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <value name="svc_spec">pub.soap.utils:requestResponseSpec</value>
+  <value name="node_comment">====================================================================
+     *** EXAMPLE CODE -- NOT INTENDED FOR PRODUCTION USE  ***
+====================================================================
+
+This service is an example of a target for the default SOAP processor.
+It takes the soapRequestData and soapResponseData objects that it
+receives from the SOAP message handler, extracts information from the
+body of the request message, and performs business logic on that
+information. Then, it composes a response message containing the
+results.
+
+To execute this service in Developer, enable the "acquireSOAPMessage"
+step at the top of the flow. This step will build a soapRequestData
+and soapResponseData object, simulating the pipeline that this service
+would receive from the message handler.
+
+This service is not a member of the webMethods library and should
+not be used in a production solution.
+
+====================================================================
+</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="template_type">html</value>
+  <value name="check_internal_acls">no</value>
+  <record name="svc_universal_name" javaclass="com.wm.util.Values">
+    <value name="xmlns">http://www.exprint.com/orderSys</value>
+    <value name="ncName">quoteReq</value>
+  </record>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+</Values>

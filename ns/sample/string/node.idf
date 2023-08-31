@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="shared">c3RhdGljIGZpbmFsIFN0cmluZyBQQVJBTV9CWVRFUyA9ICJieXRlcyI7DQpzdGF0aWMgZmluYWwg
+U3RyaW5nIFBBUkFNX1pJUFBFREJZVEVTID0gInppcHBlZEJ5dGVzIjsNCg==</value>
+  <value name="encodeutf8">true</value>
+  <array name="imports" type="value" depth="1">
+    <value>java.util.zip.*</value>
+    <value>java.io.ByteArrayOutputStream</value>
+    <value>java.io.IOException</value>
+    <value>java.io.ByteArrayInputStream</value>
+    <value>com.wm.util.Debug</value>
+    <value>java.io.EOFException</value>
+    <value>java.io.InputStream</value>
+    <value>java.io.BufferedInputStream</value>
+  </array>
+</Values>

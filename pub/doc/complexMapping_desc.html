@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 5.0::19981217::extensions to HTML 4.0//EN" "hmpro5.dtd">
+
+<HTML>
+
+<HEAD>
+<TITLE>Sample Folder Description</TITLE>
+</HEAD>
+
+<BODY>
+<H1 ALIGN="CENTER">webMethods Integration Server<BR>
+<FONT COLOR="#0080FF">complexMapping</FONT> Sample</H1>
+<H2>Description</H2>
+<P>The examples in this folder illustrate how to develop and implement a complex mapping.  The
+example in this folder has a company (XYZ corp.) that receives a cXML Order Request from one of its
+suppliers and needs to map it into their internal Purchase Order format for processing.  This is a
+common scenario for organizations.  They will map cXML, OBI, xCBL, etc into their internal
+standard in order to build a layer of abstraction.  Once in their internal format, they will
+send it to the appropriate backend system for processing.</P>
+
+<H2>Setup Requirements</H2>
+<P>To execute the complex mapping example in this folder, you just need to run the
+sample.complexMapping.test:runComplexMapping service.  It sets the input cXML string, converts
+it to a node, and then invokes the sample.complexMapping.messageBuilder:buildPurchaseOrder
+service.  Detailed explanations of these services can be found in the Input/Output tab
+of each service. </P>
+<HR>
+</BODY>
+</HTML>
+

@@ -1,0 +1,32 @@
+                  </center>
+                </tr>
+            </table>
+
+<table>
+    <tr>
+        <td><img src="/WmSamples/goes/spacer.gif" width="20" height="20"></td>
+    </tr>
+    <tr>
+        <td>
+          <div align="center">
+            <center>
+            <table border="0" cellspacing="4" cellpadding="0" bgcolor="#000000">
+              <tr>
+                <td width="100%">
+                  <table border="0" bgcolor="#2E4578" cellspacing="4">
+                    <tr>
+                      <td width="100%" nowrap><font size="1" face="Arial">Copyright © 
+                    2000 webMethods</font></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            </center>
+          </div>
+        </td>
+    </tr>
+    <tr>
+        <td><img src="/WmSamples/goes/spacer.gif" width="20" height="20"></td>
+    </tr>
+</table>
